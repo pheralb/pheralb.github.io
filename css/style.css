@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "PT Sans";
+    src: url("fuente\PTSans-Regular.woff2");
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.nav-link {
+    padding: 10px;
+    background-color: #FFD711;
+    border-width: 2px;
+}
+
+.active {
+    background-color: #FFD711;
+    color: black;
+}
+
+.tab-pane {
+    padding: 10px;
+    background-color: #FFD711;
+    border-width: 2px;
+}
