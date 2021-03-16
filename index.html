@@ -3,78 +3,124 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva Hotelera</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
+    <meta name="description" content="Official Pheralb repositories for web development.">
+    <title>Pheralb | Github Repositories</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/mdtoast.min.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&family=Source+Code+Pro&display=swap"
+        rel="stylesheet">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" href="./img/favicon.png">
+    <meta name="msapplication-TileColor" content="#2a458e">
+    <meta name="msapplication-TileImage" content="./img/favicon.png">
+    <link rel="icon" href="./img/favicon.png" sizes="32x32">
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top text-white mb-5 shadow-sm">
+        <a class="navbar-brand textStyled-2 text-white" href="#">
+            <img src="./img/favicon-white.png" width="30" height="30" class="d-inline-block align-top" alt="#">
+            pheralb
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- Container -->
-    <div class="container">
-
-        <!-- Tabs Hoteles y Vuelos -->
-        <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-link active" id="nav-hoteles-tab" data-toggle="tab" href="#nav-hoteles" role="tab" aria-controls="nav-hoteles" aria-selected="true">Hoteles</a>
-                <a class="nav-link" id="nav-vueloshoteles-tab" data-toggle="tab" href="#nav-vueloshoteles" role="tab" aria-controls="nav-vueloshoteles" aria-selected="false">Vuelos</a>
-            </div>
-        </nav>
-
-        <!-- Pestaña Hoteles y Vuelos -->
-        <div class="tab-content" id="nav-tabContent">
-            <!-- Hoteles -->
-            <div class="tab-pane fade show active" id="nav-hoteles" role="tabpanel" aria-labelledby="nav-hoteles-tab">
-                <!-- Formulario -->
-                <div class="row">
-                    <div class="col-sm">
-                        <label for="hoteldestino">Hotel o destino:</label>
-                        <input type="text" class="form-control" id="hoteldestino">
-                    </div>
-                    <div class="col-sm">
-                        <label for="fechaentrada">Fecha de entrada:</label>
-                        <input type="date" class="form-control" id="fechaentrada">
-                    </div>
-                    <div class="col-sm">
-                        <label for="numnoches">Número de noches:</label>
-                        <input type="date" class="form-control" id="numnoches">
-                    </div>
-                    <div class="col-sm">
-                        <label for="numhabitaciones">Habitaciones:</label>
-                        <select class="form-control" id="numhabitaciones">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="col-sm">
-                        <button type="submit" class="btn btn-warning btn-lg">Buscar</button>
-                    </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link textNav text-white"
+                        href="https://www.linkedin.com/in/pablo-hern%C3%A1ndez-albertos-b85a99174/" target="_blank"
+                        data-toggle="tooltip" data-placement="bottom" title="LinkedIn Profile">
+                        LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid rounded-0 bg-dark">
+        <h1 class="display-4 textStyled text-center mb-3">Web Application Developer</h1>
+        <div class="d-flex justify-content-center">
+            <img src="./img/languages/html.webp" alt="html" class="img img-fluid">
+            <img src="./img/languages/css.webp" alt="css" class="img img-fluid">
+            <img src="./img/languages/js.webp" alt="js" class="img img-fluid">
+            <img src="./img/languages/angular.webp" alt="angular" class="img img-fluid">
+            <img src="./img/languages/php.webp" alt="php" class="img img-fluid">
+        </div>
+        <hr class="my-4">
+        <input class="form-control form-control-lg mb-3 bg-dark border border-primary" id="myFilter"
+            onkeyup="searchRepositories()" type="text" placeholder="Search repositories..." autofocus>
+        <div class="alert alert-warning" id="notFound" role="alert">
+            A simple secondary alert—check it out!
+        </div>
+        <div class="card-deck repositories" id="myRepos">
+            <!-- <div class="card shadow-lg rounded-lg">
+                <div class="card-body">
+                  <h5 class="card-title textStyled">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="modal fade" id="copy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark">
+                <div class="modal-header bg-dark border-0">
+                    <h5 class="modal-title textStyled" id="exampleModalLabel">
+                        <img src="./img/GitHub.webp" width="24px" height="24px" alt="github" class="mr-3">Clone this
+                        Repository</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close"
+                        data-toggle="tooltip" data-placement="right" title="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body bg-dark">
+                    <ul class="list-group bg-dark mb-3">
+                        <li class="list-group-item bg-dark"><img src="./img/git.png" width="16px" height="16px"
+                                alt="git" class="mr-2"> Open <a href="https://git-scm.com/downloads" class="text-white"
+                                target="_blank"><strong>Git Bash</strong></a></li>
+                        <li class="list-group-item bg-dark"><i class="bi bi-archive mr-3"></i>Change the current working
+                            directory to the location where you want to clone the directory.</li>
+                        <li class="list-group-item bg-dark"><img src="./img/GitHub.webp" width="16px" height="16px"
+                                alt="github" class="mr-2"> Write:
+                            <input type="text"
+                                class="form-control form-control-lg mt-2 mb-3 bg-dark border border-primary"
+                                id="recipient-name">
+                            <button type="button" class="btn btn-primary" id="copyText"><i
+                                    class="bi bi-clipboard-check mr-3"></i>Copy</button>
+                        </li>
+                        <li class="list-group-item bg-dark"><i class="bi bi-check mr-3"></i>Press
+                            <strong>ENTER</strong>.</li>
+                    </ul>
                 </div>
             </div>
-            <!-- Vuelos -->
-            <div class="tab-pane fade" id="nav-vueloshoteles" role="tabpanel" aria-labelledby="nav-vueloshoteles-tab">
-            </div>
         </div>
-
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-    </script>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">&copy; 2021 - Pablo Hdez - Created with ❤ in Spain</span>
+        </div>
+    </footer>
 
-
-    <!-- JS -->
-    <script src="js/script.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+    <script src="./js/scripts.js"></script>
+    <script src="./js/mdtoast.min.js"></script>
 </body>
 
 </html>
