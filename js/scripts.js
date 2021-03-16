@@ -15,12 +15,12 @@ request.onload = function () {
         statusHTML += '<div class="card shadow-lg rounded-lg mb-3"> \
                     <div class="card-body"> \
                     <h5 class="card-title textStyled"><a href="' + status.html_url + '" target="_blank" class="text-white mr-3">' + status.name + '</a><a href="#" data-toggle="modal" data-target="#copy" data-whatever="' + status.clone_url + '"><i class="bi bi-box"></i></a></h5> \
-                    <p class="card-text">' + status.git_url + '</p> \
+                    <p class="card-text">' + status.description + '</p> \
                     </div>\
                     <div class="card-footer">\
                         <span class="mr-4"><i class="bi bi-star mr-2"></i> Stars: ' + status.stargazers_count + '</span> \
                         <span class="mr-4"><i class="bi bi-bounding-box mr-2"></i> Forks: ' + status.forks_count + '</span> \
-                        <span class="mr-4"><i class="bi bi-code"></i> Language: ' + status.language + '</span> \
+                        <span class="mr-4"><i class="bi bi-person mr-2"></i>' + status.owner.login  + '</span> \
                     <hr>\
                     <p class="text-muted"><i class="bi bi-clock-history mr-3"></i>Last update: ' + status.updated_at + '</p>\
                     </div>\
@@ -79,3 +79,11 @@ function copyTextToClipBoard() {
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
+/*------------------------------------------*/
+var string = "Web Application Developer";
+var str = string.split("");
+var el = document.getElementById('str');
+(function animate() {
+str.length > 0 ? el.innerHTML += str.shift() : clearTimeout(running); 
+var running = setTimeout(animate, 70);
+})();

@@ -1,3 +1,6 @@
+<!--
+    pheralb.github.io - Source code.
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +15,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/mdtoast.min.css">
+    <link rel="stylesheet" href="./css/dark-mode.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&family=Source+Code+Pro&display=swap"
@@ -24,7 +28,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top text-white mb-5 shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top text-white mb-3">
         <a class="navbar-brand textStyled-2 text-white" href="#">
             <img src="./img/favicon-white.png" width="30" height="30" class="d-inline-block align-top" alt="#">
             pheralb
@@ -43,11 +47,26 @@
                         LinkedIn
                     </a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link textNav text-white" href="https://github.com/pheralb" target="_blank"
+                        data-toggle="tooltip" data-placement="bottom" title="Github Profile">
+                        Github
+                    </a>
+                </li>
             </ul>
+            <div class="form-inline my-2 my-lg-0">
+                <a href="https://pages.github.com/" target="_blank"><img src="./img/githubpages.svg" width="100px" alt="github-pages"></a>
+            </div>
         </div>
     </nav>
     <div class="container-fluid rounded-0 bg-dark">
-        <h1 class="display-4 textStyled text-center mb-3">Web Application Developer</h1>
+        <div class="d-flex justify-content-end">
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="darkSwitch">
+                <label class="form-check-label moon" for="darkSwitch"><i class="bi bi-moon ml-2 mr-2"></i></label>
+            </div>
+        </div>
+        <h1 class="display-5 textStyled text-center mb-3" id="str"></h1>
         <div class="d-flex justify-content-center">
             <img src="./img/languages/html.webp" alt="html" class="img img-fluid">
             <img src="./img/languages/css.webp" alt="css" class="img img-fluid">
@@ -58,10 +77,7 @@
         <hr class="my-4">
         <input class="form-control form-control-lg mb-3 bg-dark border border-primary" id="myFilter"
             onkeyup="searchRepositories()" type="text" placeholder="Search repositories..." autofocus>
-        <div class="alert alert-warning" id="notFound" role="alert">
-            A simple secondary alert—check it out!
-        </div>
-        <div class="card-deck repositories" id="myRepos">
+        <div class="repositories" id="myRepos">
             <!-- <div class="card shadow-lg rounded-lg">
                 <div class="card-body">
                   <h5 class="card-title textStyled">Card title</h5>
@@ -74,8 +90,8 @@
         </div>
     </div>
     <div class="modal fade" id="copy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content bg-dark">
+        <div class="modal-dialog modal-lg rounded-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content bg-dark rounded-lg">
                 <div class="modal-header bg-dark border-0">
                     <h5 class="modal-title textStyled" id="exampleModalLabel">
                         <img src="./img/GitHub.webp" width="24px" height="24px" alt="github" class="mr-3">Clone this
@@ -85,7 +101,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body bg-dark">
+                <div class="modal-body bg-dark rounded-lg">
                     <ul class="list-group bg-dark mb-3">
                         <li class="list-group-item bg-dark"><img src="./img/git.png" width="16px" height="16px"
                                 alt="git" class="mr-2"> Open <a href="https://git-scm.com/downloads" class="text-white"
@@ -109,7 +125,7 @@
     </div>
 
     <footer class="footer">
-        <div class="container">
+        <div class="container text-center">
             <span class="text-muted">&copy; 2021 - Pablo Hdez - Created with ❤ in Spain</span>
         </div>
     </footer>
@@ -121,6 +137,7 @@
     </script>
     <script src="./js/scripts.js"></script>
     <script src="./js/mdtoast.min.js"></script>
+    <script src="./js/dark-mode-switch.min.js"></script>
 </body>
 
 </html>

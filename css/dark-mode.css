@@ -1,0 +1,50 @@
+[data-theme="dark"] {
+  background-color: #242424 !important;
+  color: #eee;
+}
+
+[data-theme="dark"] .container-fluid {
+  background-color:#242424 !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .card {
+  background-color:#1a1a1a !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .form-control {
+  border-color:lightblue;
+  background-color:#242424 !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .navbar-dark {
+  background-color:#111111 !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .footer {
+  background-color:#242424 !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .modal-header {
+  background-color:#242424 !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .modal-body {
+  background-color:#242424 !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .modal-footer {
+  background-color:#242424 !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .bg-dark {
+  background-color:#242424 !important;
+  color: white !important;
+}
